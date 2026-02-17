@@ -1,8 +1,11 @@
 using Exam.App;
-using Exam.App.Controllers.Middleware;
+using Exam.App.Domain;
+using Exam.App.Infrastructure;
 using Exam.App.Infrastructure.Database;
+using Exam.App.Mappers;
+using Exam.App.Middleware;
+using Exam.App.Repository;
 using Exam.App.Services;
-using Exam.App.Services.Mappers;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +24,16 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Service and Repository Dependency Injection
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IPatientsRepository, PatientsRepository>();
+builder.Services.AddScoped<IPatientsService, PatientsService>();
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<IAnimalsRepository, AnimalsRepository>();
+builder.Services.AddScoped<IAnimalsService, AnimalsService>();
+builder.Services.AddScoped<IAppointmentsRepository, AppointmentsRepository>();
+builder.Services.AddScoped<IAppointmentsService, AppointmentsService>();
+builder.Services.AddScoped<IReportsRepository, ReportsRepository>();
+builder.Services.AddScoped<IReportsService, ReportsService>();
 
 
 

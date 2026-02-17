@@ -3,8 +3,8 @@ using System.Security.Claims;
 using System.Text;
 using AutoMapper;
 using Exam.App.Domain;
-using Exam.App.Services.Dtos;
-using Exam.App.Services.Exceptions;
+using Exam.App.Dtos;
+using Exam.App.Middleware.Exceptions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
@@ -40,7 +40,7 @@ public class AuthService : IAuthService
             throw new InvalidRegistrationException(errorMessage);
         }
 
-        await _userManager.AddToRoleAsync(user, "User");
+        await _userManager.AddToRoleAsync(user, "Owner");
     }
 
     public async Task<string> Login(LoginDto data)

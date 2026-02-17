@@ -1,4 +1,4 @@
-﻿namespace Exam.App.Services.Exceptions;
+﻿namespace Exam.App.Middleware.Exceptions;
 
 public class InvalidCredentialsException : UnauthorizedException
 {

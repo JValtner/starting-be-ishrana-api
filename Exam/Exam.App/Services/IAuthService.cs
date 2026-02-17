@@ -1,5 +1,5 @@
 ﻿using System.Security.Claims;
-using Exam.App.Services.Dtos;
+using Exam.App.Dtos;
 
 namespace Exam.App.Services;
 

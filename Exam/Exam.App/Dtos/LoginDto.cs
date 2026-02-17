@@ -1,4 +1,4 @@
-﻿namespace Exam.App.Services.Dtos;
+﻿namespace Exam.App.Dtos;
 
 public class LoginDto
 {

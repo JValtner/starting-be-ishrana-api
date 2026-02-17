@@ -9,7 +9,7 @@ public static class SeedData
     {
         var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
-        var admin1 = new ApplicationUser
+        var Vet1 = new ApplicationUser
         {
             UserName = "john",
             Email = "john.doe@example.com",
@@ -18,13 +18,13 @@ public static class SeedData
             EmailConfirmed = true
         };
 
-        if (await userManager.FindByNameAsync(admin1.UserName) == null)
+        if (await userManager.FindByNameAsync(Vet1.UserName) == null)
         {
-            await userManager.CreateAsync(admin1, "John123!");
-            await userManager.AddToRoleAsync(admin1, "Administrator");
+            await userManager.CreateAsync(Vet1, "John123!");
+            await userManager.AddToRoleAsync(Vet1, "Veterinarian");
         }
 
-        var admin2 = new ApplicationUser
+        var Assistant2 = new ApplicationUser
         {
             UserName = "jane",
             Email = "jane.doe@example.com",
@@ -33,10 +33,25 @@ public static class SeedData
             EmailConfirmed = true
         };
 
-        if (await userManager.FindByNameAsync(admin2.UserName) == null)
+        if (await userManager.FindByNameAsync(Assistant2.UserName) == null)
         {
-            await userManager.CreateAsync(admin2, "Jane123!");
-            await userManager.AddToRoleAsync(admin2, "Administrator");
+            await userManager.CreateAsync(Assistant2, "Jane123!");
+            await userManager.AddToRoleAsync(Assistant2, "Assistant");
+        }
+
+        var Owner3 = new ApplicationUser
+        {
+            UserName = "john2",
+            Email = "john.doe@example.com",
+            Name = "John",
+            Surname = "Doe",
+            EmailConfirmed = true
+        };
+
+        if (await userManager.FindByNameAsync(Owner3.UserName) == null)
+        {
+            await userManager.CreateAsync(Owner3, "John123!");
+            await userManager.AddToRoleAsync(Owner3, "Owner");
         }
     }
 }

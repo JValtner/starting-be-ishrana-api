@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
-using Exam.App.Services.Exceptions;
+using Exam.App.Middleware.Exceptions;
 
-namespace Exam.App.Controllers.Middleware;
+namespace Exam.App.Middleware;
 
 internal sealed class ExceptionHandlingMiddleware : IMiddleware
 {

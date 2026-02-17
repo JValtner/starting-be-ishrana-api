@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Exam.App.Services.Dtos;
+namespace Exam.App.Dtos;
 
 public class RegistrationDto
 {
